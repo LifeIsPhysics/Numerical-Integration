@@ -7,5 +7,13 @@ $\frac{\sin{x}}{x},\ \exp{-x^2}$. In that case, however we can make use of numer
 which approximates the area underneath a one-dimensional function by calculating 
 $\int{}_a^b f(x) dx = \sum{}_i^N w_i f(x_i)$, where $w_i$ are weights (determined by the integration 
 method) and $x_i$ ($i = 0,..., N-1$) are nodes separated by the integration step size 
-$h = \frac{b - a}{N}$. 
+$h = \frac{b - a}{N}$.  
+
+In this library, the trapezoidal rule is implemented where the weights are implemented as follows: 
+$w = {\frac{h}{2}, h, h, ...,\frac{h}{2}}$. You can however create a class which inherits from 
+`class Integrator` to implement your own Integrator, which computes its own weights and nodes by 
+overriding the the virtual function `void compute_weights_and_nodes(Weights&, Nodes&)`; 
+noteable examples include the Simpson's rule or gauss integration.
+
+
 
