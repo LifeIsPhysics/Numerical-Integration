@@ -6,7 +6,7 @@
 int main(){
     TrapezoidRule tr (
         [](double x){ return std::exp( - x ); },
-        std::make_pair(0., 1.),
+        std::make_pair(0.0, 1.0),
         5000u
     );
 
