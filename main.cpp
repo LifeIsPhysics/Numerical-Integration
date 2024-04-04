@@ -1,8 +1,9 @@
+#include "TrapezoidRule.h"
+#include "Integrator.h"
+
 #include <cmath>
 #include <iostream>
 #include <string>
-#include "TrapezoidRule.h"
-#include "Integrator.h"
 
 int main(int argc, char *argv[]){
     if(argc < 4) {
@@ -13,7 +14,7 @@ int main(int argc, char *argv[]){
     double a = std::stod(argv[1]);
     double b = std::stod(argv[2]);
     size_t N = std::stod(argv[3]);
-
+    //for(auto i{0}; i < 1e4; i++){
     TrapezoidRule tr (
         [](double x){ return std::exp( - x ); }, // Interchangable function pointer
         std::make_pair(a, b),
@@ -21,6 +22,8 @@ int main(int argc, char *argv[]){
     );
 
     std::cout << "Integration Result: " << tr.integrate()  << '\n';
+    //}
+
 
     return 0;
 }

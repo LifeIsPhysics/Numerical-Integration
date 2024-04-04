@@ -1,5 +1,5 @@
-#include "TrapezoidRule.h"
 #include "Integrator.h"
+#include "TrapezoidRule.h"
 
 TrapezoidRule::TrapezoidRule(IntegrableFunction1D const& f, Bounds const& bounds, size_t N)
         : Integrator{f, bounds, N}

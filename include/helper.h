@@ -9,7 +9,7 @@ constexpr bool approximatelyEqualRel(double a, double b, double relEpsilon)
 }
 
 // Return true if the difference between a and b is less than or equal to absEpsilon, or within relEpsilon percent of the larger of a and b
-constexpr bool equal(double a, double b, double absEpsilon = 1e-4, double relEpsilon = 1e-4)
+constexpr bool equal(double a, double b, double absEpsilon = 1e-6, double relEpsilon = 1e-6)
 {
     // Check if the numbers are really close -- needed when comparing numbers near zero.
     if (std::abs(a - b) <= absEpsilon)

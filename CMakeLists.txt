@@ -1,13 +1,11 @@
-cmake_minimum_required(VERSION 3.20...3.25)
+cmake_minimum_required(VERSION 3.20...3.29)
 
 project(NumericalIntegrator LANGUAGES CXX)
-
-enable_testing()
-add_test(NAME Test COMMAND Test)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -pg")
 
 add_executable(NumericalIntegrator main.cpp)
 target_link_libraries(NumericalIntegrator PUBLIC Integrator)
