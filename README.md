@@ -36,11 +36,11 @@ make
 ```
 The program can then be run using these commands
 ```bash
-./NumericalIntegrator <double> <double> <size_t>
+Usage: ./NumericalIntegrator <double:a> <double:b> <size_t:N> <optional string:Integrator>
 ```
 
 # Example Output
 ```bash
-./NumericalIntegrator 0 1 5000
+./NumericalIntegrator 0 1 5000 simpson
 Integration Result: 0.632047
 ```
