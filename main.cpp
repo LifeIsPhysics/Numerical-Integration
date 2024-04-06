@@ -1,5 +1,6 @@
-#include "TrapezoidRule.h"
 #include "Integrator.h"
+#include "SimpsonRule.h"
+#include "TrapezoidRule.h"
 
 #include <cmath>
 #include <iostream>
@@ -13,9 +14,9 @@ int main(int argc, char *argv[]){
     
     double a = std::stod(argv[1]);
     double b = std::stod(argv[2]);
-    size_t N = std::stod(argv[3]);
+    size_t N = (size_t) std::stoi(argv[3]);
     //for(auto i{0}; i < 1e4; i++){
-    TrapezoidRule tr (
+    SimpsonRule tr (
         [](double x){ return std::exp( - x ); }, // Interchangable function pointer
         std::make_pair(a, b),
         N

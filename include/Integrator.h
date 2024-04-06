@@ -22,11 +22,11 @@ public:
     Integrator(IntegrableFunction1D const& f, Bounds const& bounds, size_t N);
     ~Integrator() = default;
 
-    Bounds const get_bounds() const;
-    size_t const get_num_intervals() const;
-    virtual void compute_weights_and_nodes(Weights& w, Nodes& x){};
+    Bounds get_bounds() const;
+    size_t get_num_intervals() const;
+    virtual void compute_weights_and_nodes(Weights& w, Nodes& x) = 0;
 
-    double const integrate();
+    double integrate();
 };
 
 #endif // INTEGRATOR_H

@@ -3,7 +3,7 @@
 Integrator::Integrator(IntegrableFunction1D const& f, Bounds const& bounds, size_t N)
         : m_f{ f }, m_bounds{ bounds }, m_num_intervals{ N } {}
 
-double const Integrator::integrate()
+double Integrator::integrate()
 {
         Weights w(m_num_intervals);
         Nodes   x(m_num_intervals);
@@ -18,12 +18,12 @@ double const Integrator::integrate()
         return res;
 }
 
-Bounds const Integrator::get_bounds() const
+Bounds Integrator::get_bounds() const
 {
     return m_bounds;
 }
 
-size_t const Integrator::get_num_intervals() const
+size_t Integrator::get_num_intervals() const
 {
     return m_num_intervals;
 }

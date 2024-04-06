@@ -8,9 +8,8 @@ TrapezoidRule::TrapezoidRule(IntegrableFunction1D const& f, Bounds const& bounds
 void TrapezoidRule::compute_weights_and_nodes(Weights& w, Nodes& x)
 {
         size_t N = get_num_intervals();
-
         auto [a, b] = get_bounds();
-        double h = (b - a) / N;
+        double h = (b - a) / (double) N;
 
         for(auto i{0u}; i < N; ++i)
         {
